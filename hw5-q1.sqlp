@@ -1,0 +1,41 @@
+USE hw5;
+SELECT  U.name as city
+FROM world X, X.mondial.country Y, Y.province Z, 
+     (CASE WHEN is_array(Z.city)
+      THEN Z.city 
+      ELSE [Z.city] END) U 
+WHERE Y.name = 'Peru'
+ORDER BY U.name;
+
+/*
+{ "city": "Abancay" }
+{ "city": "Arequipa" }
+{ "city": "Ayacucho" }
+{ "city": "Cajamarca" }
+{ "city": "Callao" }
+{ "city": "Cerro de Pasco" }
+{ "city": "Chachapoyas" }
+{ "city": "Chiclayo" }
+{ "city": "Chimbote" }
+{ "city": "Chincha Alta" }
+{ "city": "Cuzco" }
+{ "city": "Huancavelica" }
+{ "city": "Huancayo" }
+{ "city": "Huanuco" }
+{ "city": "Huaraz" }
+{ "city": "Ica" }
+{ "city": "Iquitos" }
+{ "city": "Juliaca" }
+{ "city": "Lima" }
+{ "city": "Moquegua" }
+{ "city": "Moyobamba" }
+{ "city": "Piura" }
+{ "city": "Pucallpa" }
+{ "city": "Puerto Maldonado" }
+{ "city": "Puno" }
+{ "city": "Sullana" }
+{ "city": "Tacna" }
+{ "city": "Talara" }
+{ "city": "Trujillo" }
+{ "city": "Tumbes" }
+*/

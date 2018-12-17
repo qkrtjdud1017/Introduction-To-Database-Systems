@@ -1,0 +1,280 @@
+USE hw5;
+SELECT Z.name AS mountain, int(Z.height) AS height, Y.`-car_code` AS country_code, Y.name AS country_name
+FROM world X, X.mondial.country Y, X.mondial.mountain Z, split(Z.`-country`, " ") codes
+WHERE Y.`-car_code` = codes
+ORDER BY int(Z.height) DESC;
+
+/*
+{ "height": 8848, "mountain": "Mount Everest", "country_code": "TJ", "country_name": "China" }
+{ "height": 8848, "mountain": "Mount Everest", "country_code": "NEP", "country_name": "Nepal" }
+{ "height": 8611, "mountain": "K2", "country_code": "TJ", "country_name": "China" }
+{ "height": 8611, "mountain": "K2", "country_code": "PK", "country_name": "Pakistan" }
+{ "height": 8586, "mountain": "Kangchendzonga", "country_code": "IND", "country_name": "India" }
+{ "height": 8586, "mountain": "Kangchendzonga", "country_code": "NEP", "country_name": "Nepal" }
+{ "height": 8516, "mountain": "Lhotse", "country_code": "TJ", "country_name": "China" }
+{ "height": 8516, "mountain": "Lhotse", "country_code": "NEP", "country_name": "Nepal" }
+{ "height": 8485, "mountain": "Makalu", "country_code": "TJ", "country_name": "China" }
+{ "height": 8485, "mountain": "Makalu", "country_code": "NEP", "country_name": "Nepal" }
+{ "height": 8188, "mountain": "Cho Oyu", "country_code": "TJ", "country_name": "China" }
+{ "height": 8188, "mountain": "Cho Oyu", "country_code": "NEP", "country_name": "Nepal" }
+{ "height": 8167, "mountain": "Dhaulagiri", "country_code": "NEP", "country_name": "Nepal" }
+{ "height": 8163, "mountain": "Manaslu", "country_code": "NEP", "country_name": "Nepal" }
+{ "height": 8125, "mountain": "Nanga Parbat", "country_code": "PK", "country_name": "Pakistan" }
+{ "height": 8091, "mountain": "Annapurna", "country_code": "NEP", "country_name": "Nepal" }
+{ "height": 8080, "mountain": "Gasherbrum I", "country_code": "TJ", "country_name": "China" }
+{ "height": 8080, "mountain": "Gasherbrum I", "country_code": "PK", "country_name": "Pakistan" }
+{ "height": 8051, "mountain": "Broad Peak", "country_code": "TJ", "country_name": "China" }
+{ "height": 8051, "mountain": "Broad Peak", "country_code": "PK", "country_name": "Pakistan" }
+{ "height": 8034, "mountain": "Gasherbrum II", "country_code": "TJ", "country_name": "China" }
+{ "height": 8034, "mountain": "Gasherbrum II", "country_code": "PK", "country_name": "Pakistan" }
+{ "height": 8027, "mountain": "Shishapangma", "country_code": "TJ", "country_name": "China" }
+{ "height": 7816, "mountain": "Nanda Devi", "country_code": "IND", "country_name": "India" }
+{ "height": 7690, "mountain": "Tirich Mir", "country_code": "AFG", "country_name": "Afghanistan" }
+{ "height": 7494, "mountain": "Pik Kommunizma", "country_code": "TAD", "country_name": "Tajikistan" }
+{ "height": 7439, "mountain": "Pik Pobeda", "country_code": "TJ", "country_name": "China" }
+{ "height": 7439, "mountain": "Pik Pobeda", "country_code": "KGZ", "country_name": "Kyrgyzstan" }
+{ "height": 7134, "mountain": "Pik Lenina", "country_code": "TAD", "country_name": "Tajikistan" }
+{ "height": 7134, "mountain": "Pik Lenina", "country_code": "KGZ", "country_name": "Kyrgyzstan" }
+{ "height": 6995, "mountain": "Pik Chan-Tengri", "country_code": "KGZ", "country_name": "Kyrgyzstan" }
+{ "height": 6974, "mountain": "Pik Revoluzija", "country_code": "TAD", "country_name": "Tajikistan" }
+{ "height": 6962, "mountain": "Aconcagua", "country_code": "RA", "country_name": "Argentina" }
+{ "height": 6893, "mountain": "Ojos del Salado", "country_code": "RA", "country_name": "Argentina" }
+{ "height": 6893, "mountain": "Ojos del Salado", "country_code": "RCH", "country_name": "Chile" }
+{ "height": 6795, "mountain": "Monte Pissis", "country_code": "RA", "country_name": "Argentina" }
+{ "height": 6785, "mountain": "Pik Moskva", "country_code": "TAD", "country_name": "Tajikistan" }
+{ "height": 6768, "mountain": "Huascaran", "country_code": "PE", "country_name": "Peru" }
+{ "height": 6739, "mountain": "Llullaillaco", "country_code": "RA", "country_name": "Argentina" }
+{ "height": 6739, "mountain": "Llullaillaco", "country_code": "RCH", "country_name": "Chile" }
+{ "height": 6726, "mountain": "Pik Karl-Marx", "country_code": "TAD", "country_name": "Tajikistan" }
+{ "height": 6714, "mountain": "Kailash", "country_code": "TJ", "country_name": "China" }
+{ "height": 6550, "mountain": "Tupungato", "country_code": "RA", "country_name": "Argentina" }
+{ "height": 6542, "mountain": "Sajama", "country_code": "BOL", "country_name": "Bolivia" }
+{ "height": 6439, "mountain": "Illimani", "country_code": "BOL", "country_name": "Bolivia" }
+{ "height": 6425, "mountain": "Coropuna", "country_code": "PE", "country_name": "Peru" }
+{ "height": 6368, "mountain": "Illampu", "country_code": "BOL", "country_name": "Bolivia" }
+{ "height": 6336, "mountain": "Ausangate", "country_code": "PE", "country_name": "Peru" }
+{ "height": 6288, "mountain": "Ampato", "country_code": "PE", "country_name": "Peru" }
+{ "height": 6287, "mountain": "Chimborazo", "country_code": "EC", "country_name": "Ecuador" }
+{ "height": 6193, "mountain": "Mt McKinley", "country_code": "USA", "country_name": "United States" }
+{ "height": 5959, "mountain": "Mt Logan", "country_code": "CDN", "country_name": "Canada" }
+{ "height": 5947, "mountain": "Alpamayo", "country_code": "PE", "country_name": "Peru" }
+{ "height": 5920, "mountain": "Licancabur", "country_code": "BOL", "country_name": "Bolivia" }
+{ "height": 5920, "mountain": "Licancabur", "country_code": "RCH", "country_name": "Chile" }
+{ "height": 5897, "mountain": "Cotopaxi", "country_code": "EC", "country_name": "Ecuador" }
+{ "height": 5895, "mountain": "Kilimanjaro", "country_code": "EAT", "country_name": "Tanzania" }
+{ "height": 5796, "mountain": "Cayambe", "country_code": "EC", "country_name": "Ecuador" }
+{ "height": 5775, "mountain": "Pico Cristobal Colon", "country_code": "CO", "country_name": "Colombia" }
+{ "height": 5750, "mountain": "Nevado del Huila", "country_code": "CO", "country_name": "Colombia" }
+{ "height": 5700, "mountain": "Citlaltepetl (Pico de Orizaba)", "country_code": "MEX", "country_name": "Mexico" }
+{ "height": 5642, "mountain": "Elbrus", "country_code": "R", "country_name": "Russia" }
+{ "height": 5610, "mountain": "Damavand", "country_code": "IR", "country_name": "Iran" }
+{ "height": 5489, "mountain": "Mt St.Elias", "country_code": "CDN", "country_name": "Canada" }
+{ "height": 5489, "mountain": "Mt St.Elias", "country_code": "USA", "country_name": "United States" }
+{ "height": 5450, "mountain": "Popocatepetl", "country_code": "MEX", "country_name": "Mexico" }
+{ "height": 5389, "mountain": "Nevado del Ruiz", "country_code": "CO", "country_name": "Colombia" }
+{ "height": 5286, "mountain": "Iztaccihuatl", "country_code": "MEX", "country_name": "Mexico" }
+{ "height": 5199, "mountain": "Kenia", "country_code": "EAK", "country_name": "Kenya" }
+{ "height": 5187, "mountain": "Pico Rocarre", "country_code": "PE", "country_name": "Peru" }
+{ "height": 5165, "mountain": "Ararat", "country_code": "TR", "country_name": "Turkey" }
+{ "height": 5148, "mountain": "Mawenzi", "country_code": "EAT", "country_name": "Tanzania" }
+{ "height": 5109, "mountain": "Ruwenzori", "country_code": "ZRE", "country_name": "Zaire" }
+{ "height": 5109, "mountain": "Ruwenzori", "country_code": "EAU", "country_name": "Uganda" }
+{ "height": 5033, "mountain": "Kasbek", "country_code": "R", "country_name": "Russia" }
+{ "height": 5033, "mountain": "Kasbek", "country_code": "GE", "country_name": "Georgia" }
+{ "height": 5005, "mountain": "Mt Bona", "country_code": "CDN", "country_name": "Canada" }
+{ "height": 5005, "mountain": "Mt Bona", "country_code": "USA", "country_name": "United States" }
+{ "height": 4996, "mountain": "Mt Blackburn", "country_code": "USA", "country_name": "United States" }
+{ "height": 4981, "mountain": "Pico Bolivar", "country_code": "YV", "country_name": "Venezuela" }
+{ "height": 4884, "mountain": "Puncak Jaya", "country_code": "RI", "country_name": "Indonesia" }
+{ "height": 4811, "mountain": "Sabalan", "country_code": "IR", "country_name": "Iran" }
+{ "height": 4808, "mountain": "Mont Blanc", "country_code": "F", "country_name": "France" }
+{ "height": 4808, "mountain": "Mont Blanc", "country_code": "I", "country_name": "Italy" }
+{ "height": 4750, "mountain": "Kljutschewskaja Sopka", "country_code": "R", "country_name": "Russia" }
+{ "height": 4663, "mountain": "Mt Fairweather", "country_code": "CDN", "country_name": "Canada" }
+{ "height": 4663, "mountain": "Mt Fairweather", "country_code": "USA", "country_name": "United States" }
+{ "height": 4634, "mountain": "Monte Rosa", "country_code": "I", "country_name": "Italy" }
+{ "height": 4634, "mountain": "Monte Rosa", "country_code": "CH", "country_name": "Switzerland" }
+{ "height": 4567, "mountain": "Meru", "country_code": "EAT", "country_name": "Tanzania" }
+{ "height": 4558, "mountain": "Nevado de Toluca", "country_code": "MEX", "country_name": "Mexico" }
+{ "height": 4550, "mountain": "Zard Kuh", "country_code": "IR", "country_name": "Iran" }
+{ "height": 4533, "mountain": "Ras Daschan Terara", "country_code": "ETH", "country_name": "Ethiopia" }
+{ "height": 4509, "mountain": "Mt. Wilhelm", "country_code": "PNG", "country_name": "Papua New Guinea" }
+{ "height": 4507, "mountain": "Karisimbi", "country_code": "ZRE", "country_name": "Zaire" }
+{ "height": 4507, "mountain": "Karisimbi", "country_code": "RWA", "country_name": "Rwanda" }
+{ "height": 4506, "mountain": "Bjelucha", "country_code": "R", "country_name": "Russia" }
+{ "height": 4506, "mountain": "Bjelucha", "country_code": "KAZ", "country_name": "Kazakstan" }
+{ "height": 4478, "mountain": "Matterhorn", "country_code": "I", "country_name": "Italy" }
+{ "height": 4478, "mountain": "Matterhorn", "country_code": "CH", "country_name": "Switzerland" }
+{ "height": 4418, "mountain": "Mt Whitney", "country_code": "USA", "country_name": "United States" }
+{ "height": 4401, "mountain": "Mt Elbert", "country_code": "USA", "country_name": "United States" }
+{ "height": 4392, "mountain": "Mt Rainier", "country_code": "USA", "country_name": "United States" }
+{ "height": 4368, "mountain": "Mt. Giluwe", "country_code": "PNG", "country_name": "Papua New Guinea" }
+{ "height": 4330, "mountain": "Nevado de Colima", "country_code": "MEX", "country_name": "Mexico" }
+{ "height": 4321, "mountain": "Elgon", "country_code": "EAK", "country_name": "Kenya" }
+{ "height": 4321, "mountain": "Elgon", "country_code": "EAU", "country_name": "Uganda" }
+{ "height": 4314, "mountain": "GrandCombin", "country_code": "CH", "country_name": "Switzerland" }
+{ "height": 4302, "mountain": "Pikes Peak", "country_code": "USA", "country_name": "United States" }
+{ "height": 4274, "mountain": "Finsteraarhorn", "country_code": "CH", "country_name": "Switzerland" }
+{ "height": 4220, "mountain": "Tajumulco", "country_code": "GCA", "country_name": "Guatemala" }
+{ "height": 4214, "mountain": "Mauna Kea", "country_code": "USA", "country_name": "United States" }
+{ "height": 4207, "mountain": "Gannett Peak", "country_code": "USA", "country_name": "United States" }
+{ "height": 4170, "mountain": "Mauna Loa", "country_code": "USA", "country_name": "United States" }
+{ "height": 4165, "mountain": "Tubkhal", "country_code": "MA", "country_name": "Morocco" }
+{ "height": 4123, "mountain": "Kings Peak", "country_code": "USA", "country_name": "United States" }
+{ "height": 4101, "mountain": "Barre des Ecrins", "country_code": "F", "country_name": "France" }
+{ "height": 4101, "mountain": "Kinabalu", "country_code": "MAL", "country_name": "Malaysia" }
+{ "height": 4095, "mountain": "Fako", "country_code": "CAM", "country_name": "Cameroon" }
+{ "height": 4061, "mountain": "GranParadiso", "country_code": "I", "country_name": "Italy" }
+{ "height": 4048, "mountain": "Piz Bernina", "country_code": "I", "country_name": "Italy" }
+{ "height": 4048, "mountain": "Piz Bernina", "country_code": "CH", "country_name": "Switzerland" }
+{ "height": 4019, "mountain": "Mt Waddington", "country_code": "CDN", "country_name": "Canada" }
+{ "height": 4011, "mountain": "Wheeler Peak", "country_code": "USA", "country_name": "United States" }
+{ "height": 4006, "mountain": "Boundary Peak", "country_code": "USA", "country_name": "United States" }
+{ "height": 3954, "mountain": "Mt Robson", "country_code": "CDN", "country_name": "Canada" }
+{ "height": 3950, "mountain": "Yu Shan", "country_code": "RC", "country_name": "Taiwan" }
+{ "height": 3901, "mountain": "Granite Peak", "country_code": "USA", "country_name": "United States" }
+{ "height": 3859, "mountain": "Borah Peak", "country_code": "USA", "country_name": "United States" }
+{ "height": 3850, "mountain": "Humphreys Peak", "country_code": "USA", "country_name": "United States" }
+{ "height": 3819, "mountain": "Cerro Chirripo", "country_code": "CR", "country_name": "Costa Rica" }
+{ "height": 3805, "mountain": "Kerinci", "country_code": "RI", "country_name": "Indonesia" }
+{ "height": 3797, "mountain": "Grossglockner", "country_code": "A", "country_name": "Austria" }
+{ "height": 3776, "mountain": "Fujisan", "country_code": "J", "country_name": "Japan" }
+{ "height": 3760, "mountain": "Jabal Shuayb", "country_code": "YE", "country_name": "Yemen" }
+{ "height": 3756, "mountain": "Demirkazik", "country_code": "TR", "country_name": "Turkey" }
+{ "height": 3754, "mountain": "Mt. Cook", "country_code": "NZ", "country_name": "New Zealand" }
+{ "height": 3747, "mountain": "Mt Columbia", "country_code": "CDN", "country_name": "Canada" }
+{ "height": 3743, "mountain": "Mt Adams", "country_code": "USA", "country_name": "United States" }
+{ "height": 3726, "mountain": "Rinjani", "country_code": "RI", "country_name": "Indonesia" }
+{ "height": 3718, "mountain": "Pico de Teide", "country_code": "E", "country_name": "Spain" }
+{ "height": 3676, "mountain": "Semeru", "country_code": "RI", "country_name": "Indonesia" }
+{ "height": 3482, "mountain": "Mulhacen", "country_code": "E", "country_name": "Spain" }
+{ "height": 3482, "mountain": "Thabana Ntlenyana", "country_code": "LS", "country_name": "Lesotho" }
+{ "height": 3466, "mountain": "Leuser", "country_code": "RI", "country_name": "Indonesia" }
+{ "height": 3455, "mountain": "Rantekombola", "country_code": "RI", "country_name": "Indonesia" }
+{ "height": 3432, "mountain": "Irazu", "country_code": "CR", "country_name": "Costa Rica" }
+{ "height": 3424, "mountain": "Mt Hood", "country_code": "USA", "country_name": "United States" }
+{ "height": 3415, "mountain": "Emi Kussi", "country_code": "TCH", "country_name": "Chad" }
+{ "height": 3404, "mountain": "Pico de Aneto", "country_code": "E", "country_name": "Spain" }
+{ "height": 3343, "mountain": "Marmolata", "country_code": "I", "country_name": "Italy" }
+{ "height": 3323, "mountain": "Etna", "country_code": "I", "country_name": "Italy" }
+{ "height": 3298, "mountain": "Vignemale", "country_code": "F", "country_name": "France" }
+{ "height": 3298, "mountain": "Vignemale", "country_code": "E", "country_name": "Spain" }
+{ "height": 3190, "mountain": "Hotaka-Dake", "country_code": "J", "country_name": "Japan" }
+{ "height": 3181, "mountain": "Cathkin Peak", "country_code": "RSA", "country_name": "South Africa" }
+{ "height": 3142, "mountain": "Gunung Agung", "country_code": "RI", "country_name": "Indonesia" }
+{ "height": 3108, "mountain": "Mt Redoubt", "country_code": "USA", "country_name": "United States" }
+{ "height": 3098, "mountain": "Pico Duarte", "country_code": "DOM", "country_name": "Dominican Republic" }
+{ "height": 3088, "mountain": "Jabal Lubnan", "country_code": "RL", "country_name": "Lebanon" }
+{ "height": 3088, "mountain": "Jabal Marra", "country_code": "SUD", "country_name": "Sudan" }
+{ "height": 3069, "mountain": "Piton des Neiges", "country_code": "REUN", "country_name": "Reunion" }
+{ "height": 3055, "mountain": "Haleakala", "country_code": "USA", "country_name": "United States" }
+{ "height": 3027, "mountain": "Gunung Binaiya", "country_code": "RI", "country_name": "Indonesia" }
+{ "height": 3011, "mountain": "Pico Basile", "country_code": "GQ", "country_name": "Equatorial Guinea" }
+{ "height": 3003, "mountain": "Tahat", "country_code": "DZ", "country_name": "Algeria" }
+{ "height": 2963, "mountain": "Zugspitze", "country_code": "A", "country_name": "Austria" }
+{ "height": 2963, "mountain": "Zugspitze", "country_code": "D", "country_name": "Germany" }
+{ "height": 2963, "mountain": "Tatamailau", "country_code": "TL", "country_name": "Timor-Leste" }
+{ "height": 2954, "mountain": "Mount Apo", "country_code": "RP", "country_name": "Philippines" }
+{ "height": 2928, "mountain": "Pulog", "country_code": "RP", "country_name": "Philippines" }
+{ "height": 2925, "mountain": "Musala", "country_code": "BG", "country_name": "Bulgaria" }
+{ "height": 2917, "mountain": "Olymp", "country_code": "GR", "country_name": "Greece" }
+{ "height": 2914, "mountain": "Merapi", "country_code": "RI", "country_name": "Indonesia" }
+{ "height": 2912, "mountain": "Gran Sasso", "country_code": "I", "country_name": "Italy" }
+{ "height": 2876, "mountain": "Tsaratanana", "country_code": "RM", "country_name": "Madagascar" }
+{ "height": 2862, "mountain": "Hochgolling", "country_code": "A", "country_name": "Austria" }
+{ "height": 2850, "mountain": "Tambora", "country_code": "RI", "country_name": "Indonesia" }
+{ "height": 2829, "mountain": "Fogo", "country_code": "CV", "country_name": "Cape Verde" }
+{ "height": 2797, "mountain": "Ruapehu", "country_code": "NZ", "country_name": "New Zealand" }
+{ "height": 2791, "mountain": "Pico de Agulhas Negras", "country_code": "BR", "country_name": "Brazil" }
+{ "height": 2751, "mountain": "Korab", "country_code": "AL", "country_name": "Albania" }
+{ "height": 2751, "mountain": "Korab", "country_code": "MK", "country_name": "Macedonia" }
+{ "height": 2744, "mountain": "Changbai Shan", "country_code": "TJ", "country_name": "China" }
+{ "height": 2744, "mountain": "Changbai Shan", "country_code": "NOK", "country_name": "North Korea" }
+{ "height": 2715, "mountain": "Mt. Balbi", "country_code": "PNG", "country_name": "Papua New Guinea" }
+{ "height": 2706, "mountain": "Monte Cinto", "country_code": "F", "country_name": "France" }
+{ "height": 2694, "mountain": "Jezerce", "country_code": "AL", "country_name": "Albania" }
+{ "height": 2667, "mountain": "Guadalupe Peak", "country_code": "USA", "country_name": "United States" }
+{ "height": 2658, "mountain": "Andringitra", "country_code": "RM", "country_name": "Madagascar" }
+{ "height": 2655, "mountain": "GerlachovskyStit", "country_code": "SK", "country_name": "Slovakia" }
+{ "height": 2648, "mountain": "Torre de Cerredo", "country_code": "E", "country_name": "Spain" }
+{ "height": 2648, "mountain": "Pico de Almanzor", "country_code": "E", "country_name": "Spain" }
+{ "height": 2642, "mountain": "Tsiafajavona", "country_code": "RM", "country_name": "Madagascar" }
+{ "height": 2637, "mountain": "Jabal Katrina", "country_code": "ET", "country_name": "Egypt" }
+{ "height": 2636, "mountain": "Dodabetta", "country_code": "IND", "country_name": "India" }
+{ "height": 2631, "mountain": "Piton de la Fournaise", "country_code": "REUN", "country_name": "Reunion" }
+{ "height": 2616, "mountain": "Barbeau Peak", "country_code": "CDN", "country_name": "Canada" }
+{ "height": 2544, "mountain": "Moldoveanu", "country_code": "RO", "country_name": "Romania" }
+{ "height": 2524, "mountain": "Pidurutalagala", "country_code": "CL", "country_name": "Sri Lanka" }
+{ "height": 2469, "mountain": "Galdhoeppig", "country_code": "N", "country_name": "Norway" }
+{ "height": 2456, "mountain": "Psiloritis", "country_code": "GR", "country_name": "Greece" }
+{ "height": 2456, "mountain": "Djebel Aures", "country_code": "MA", "country_name": "Morocco" }
+{ "height": 2452, "mountain": "Glittertind", "country_code": "N", "country_name": "Norway" }
+{ "height": 2435, "mountain": "Kanlaon", "country_code": "RP", "country_name": "Philippines" }
+{ "height": 2426, "mountain": "Roque de los Muchachos", "country_code": "E", "country_name": "Spain" }
+{ "height": 2351, "mountain": "Pico", "country_code": "P", "country_name": "Portugal" }
+{ "height": 2335, "mountain": "Popomanaseu", "country_code": "SLB", "country_name": "Solomon Islands" }
+{ "height": 2313, "mountain": "Moncayo", "country_code": "E", "country_name": "Spain" }
+{ "height": 2290, "mountain": "Asahi-Dake", "country_code": "J", "country_name": "Japan" }
+{ "height": 2286, "mountain": "Snoehetta", "country_code": "N", "country_name": "Norway" }
+{ "height": 2256, "mountain": "Blue Mountain Peak", "country_code": "JA", "country_name": "Jamaica" }
+{ "height": 2241, "mountain": "Mont Orohena", "country_code": "FPOL", "country_name": "French Polynesia" }
+{ "height": 2228, "mountain": "Crap_Sogn_Gion", "country_code": "CH", "country_name": "Switzerland" }
+{ "height": 2228, "mountain": "Mt. Kosciuszko", "country_code": "AUS", "country_name": "Australia" }
+{ "height": 2207, "mountain": "Harney Peak", "country_code": "USA", "country_name": "United States" }
+{ "height": 2190, "mountain": "Tahan", "country_code": "MAL", "country_name": "Malaysia" }
+{ "height": 2147, "mountain": "Mt. Odin", "country_code": "CDN", "country_name": "Canada" }
+{ "height": 2114, "mountain": "Kebnekaise", "country_code": "S", "country_name": "Sweden" }
+{ "height": 2110, "mountain": "Hvannadalshnukur", "country_code": "IS", "country_name": "Iceland" }
+{ "height": 2090, "mountain": "Sarektjokko", "country_code": "S", "country_name": "Sweden" }
+{ "height": 2085, "mountain": "Mantalingajan", "country_code": "RP", "country_name": "Philippines" }
+{ "height": 2083, "mountain": "Jostedalsbre", "country_code": "N", "country_name": "Norway" }
+{ "height": 2060, "mountain": "Queen Marys Peak", "country_code": "HELX", "country_name": "Saint Helena" }
+{ "height": 2037, "mountain": "Mt Mitchell", "country_code": "USA", "country_name": "United States" }
+{ "height": 2025, "mountain": "Clingmans Dome", "country_code": "USA", "country_name": "United States" }
+{ "height": 2024, "mountain": "Pico de Sao Tome", "country_code": "STP", "country_name": "Sao Tome and Principe" }
+{ "height": 2021, "mountain": "Portefjaellen", "country_code": "S", "country_name": "Sweden" }
+{ "height": 1993, "mountain": "Torre de Estrela", "country_code": "P", "country_name": "Portugal" }
+{ "height": 1986, "mountain": "Mt. Bogong", "country_code": "AUS", "country_name": "Australia" }
+{ "height": 1974, "mountain": "Pico Turquino", "country_code": "C", "country_name": "Cuba" }
+{ "height": 1952, "mountain": "Olympos", "country_code": "CY", "country_name": "Cyprus" }
+{ "height": 1949, "mountain": "Pico de los Nieves", "country_code": "E", "country_name": "Spain" }
+{ "height": 1944, "mountain": "Mont Greboun", "country_code": "RN", "country_name": "Niger" }
+{ "height": 1917, "mountain": "Mt Washington", "country_code": "USA", "country_name": "United States" }
+{ "height": 1914, "mountain": "Sulitjelma", "country_code": "N", "country_name": "Norway" }
+{ "height": 1914, "mountain": "Sulitjelma", "country_code": "S", "country_name": "Sweden" }
+{ "height": 1895, "mountain": "Narodnaja", "country_code": "R", "country_name": "Russia" }
+{ "height": 1885, "mountain": "Puy de Sancy", "country_code": "F", "country_name": "France" }
+{ "height": 1876, "mountain": "Joekul", "country_code": "N", "country_name": "Norway" }
+{ "height": 1861, "mountain": "Pico Ruivo", "country_code": "P", "country_name": "Portugal" }
+{ "height": 1858, "mountain": "Silisili", "country_code": "WS", "country_name": "Samoa" }
+{ "height": 1850, "mountain": "Tarrekaise", "country_code": "S", "country_name": "Sweden" }
+{ "height": 1833, "mountain": "Snaefell", "country_code": "IS", "country_name": "Iceland" }
+{ "height": 1800, "mountain": "Tamgak", "country_code": "RN", "country_name": "Niger" }
+{ "height": 1700, "mountain": "Concepcion", "country_code": "NIC", "country_name": "Nicaragua" }
+{ "height": 1654, "mountain": "Monte Falterona", "country_code": "I", "country_name": "Italy" }
+{ "height": 1629, "mountain": "Mt Marcy", "country_code": "USA", "country_name": "United States" }
+{ "height": 1602, "mountain": "Schneekoppe", "country_code": "CZ", "country_name": "Czech Republic" }
+{ "height": 1602, "mountain": "Schneekoppe", "country_code": "PL", "country_name": "Poland" }
+{ "height": 1493, "mountain": "Feldberg", "country_code": "D", "country_name": "Germany" }
+{ "height": 1491, "mountain": "Hekla", "country_code": "IS", "country_name": "Iceland" }
+{ "height": 1486, "mountain": "Pinatubo", "country_code": "RP", "country_name": "Philippines" }
+{ "height": 1467, "mountain": "La Soufriere", "country_code": "GUAD", "country_name": "Guadeloupe" }
+{ "height": 1465, "mountain": "Puy De Dome", "country_code": "F", "country_name": "France" }
+{ "height": 1456, "mountain": "Grosser Arber", "country_code": "D", "country_name": "Germany" }
+{ "height": 1450, "mountain": "Katla", "country_code": "IS", "country_name": "Iceland" }
+{ "height": 1447, "mountain": "Morne Diablotins", "country_code": "WD", "country_name": "Dominica" }
+{ "height": 1424, "mountain": "Grand Ballon", "country_code": "F", "country_name": "France" }
+{ "height": 1397, "mountain": "Pelee", "country_code": "MART", "country_name": "Martinique" }
+{ "height": 1344, "mountain": "Ben Nevis", "country_code": "GB", "country_name": "United Kingdom" }
+{ "height": 1338, "mountain": "Cerro de Punta", "country_code": "PR", "country_name": "Puerto Rico" }
+{ "height": 1328, "mountain": "Haltiatunturi", "country_code": "SF", "country_name": "Finland" }
+{ "height": 1323, "mountain": "Mt.Victoria", "country_code": "FJI", "country_name": "Fiji" }
+{ "height": 1281, "mountain": "Vesuv", "country_code": "I", "country_name": "Italy" }
+{ "height": 1276, "mountain": "Zhima", "country_code": "R", "country_name": "Russia" }
+{ "height": 1220, "mountain": "Soufriere", "country_code": "WV", "country_name": "Saint Vincent and the Grenadines" }
+{ "height": 1141, "mountain": "Brocken", "country_code": "D", "country_name": "Germany" }
+{ "height": 1050, "mountain": "Soufriere Hills", "country_code": "MNTS", "country_name": "Montserrat" }
+{ "height": 952, "mountain": "Mt. Babel", "country_code": "CDN", "country_name": "Canada" }
+{ "height": 869, "mountain": "Uluru", "country_code": "AUS", "country_name": "Australia" }
+{ "height": 813, "mountain": "Krakatau", "country_code": "RI", "country_name": "Indonesia" }
+*/
