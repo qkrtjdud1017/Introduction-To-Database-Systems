@@ -1,0 +1,17 @@
+# login as user emily
+# try to login in again when already logged in
+login emily 1017
+create emily 1017 1017
+login emily 1017
+login emily 8888
+quit
+*
+#
+# expected printouts for user emily
+#
+Login failed
+Created user emily
+Logged in as emily
+User already logged in
+Goodbye
+*

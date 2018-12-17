@@ -1,0 +1,15 @@
+# case when user is created with same username twice
+# case when the initAmount is less than 0
+create abc abc 99
+create abc cde 99
+create cse414 student -8
+quit
+*
+#
+# expected printouts for failures
+#
+Created user abc
+Failed to create user
+Failed to create user
+Goodbye
+*

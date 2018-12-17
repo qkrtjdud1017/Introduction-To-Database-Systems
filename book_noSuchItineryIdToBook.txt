@@ -1,0 +1,23 @@
+# search for the flights (Seattle WA -> Boston MA) with 3 itineraries
+# and try to book the flight with itineraryId 4
+# but there is no itineraryId 4
+create user2 user2 100
+login user2 user2
+search "Seattle WA" "Boston MA" 1 2 3
+book 4
+quit
+*
+#
+# expected printouts
+#
+Created user user2
+Logged in as user2
+Itinerary 0: 1 flight(s), 299 minutes
+ID: 720462 Day: 2 Carrier: B6 Number: 498 Origin: Seattle WA Dest: Boston MA Duration: 299 Capacity: 18 Price: 838
+Itinerary 1: 1 flight(s), 302 minutes
+ID: 60109 Day: 2 Carrier: AS Number: 12 Origin: Seattle WA Dest: Boston MA Duration: 302 Capacity: 13 Price: 549
+Itinerary 2: 1 flight(s), 305 minutes
+ID: 706750 Day: 2 Carrier: AS Number: 12 Origin: Seattle WA Dest: Boston MA Duration: 305 Capacity: 15 Price: 774
+No such itinerary 4
+Goodbye
+*

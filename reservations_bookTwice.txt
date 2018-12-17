@@ -1,0 +1,34 @@
+# book for two flights (Seattle WA -> Boston MA) twice on 2 different days
+create cse 414 10000
+login cse 414
+search "Seattle WA" "Boston MA" 1 2 3
+book 1
+search "Seattle WA" "Boston MA" 1 3 3
+book 0
+reservations
+quit
+*
+#
+# expected printouts for reservations
+#
+Created user cse
+Logged in as cse
+Itinerary 0: 1 flight(s), 299 minutes
+ID: 720462 Day: 2 Carrier: B6 Number: 498 Origin: Seattle WA Dest: Boston MA Duration: 299 Capacity: 18 Price: 838
+Itinerary 1: 1 flight(s), 302 minutes
+ID: 60109 Day: 2 Carrier: AS Number: 12 Origin: Seattle WA Dest: Boston MA Duration: 302 Capacity: 13 Price: 549
+Itinerary 2: 1 flight(s), 305 minutes
+ID: 706750 Day: 2 Carrier: AS Number: 12 Origin: Seattle WA Dest: Boston MA Duration: 305 Capacity: 15 Price: 774
+Booked flight(s), reservation ID: 1
+Itinerary 0: 1 flight(s), 303 minutes
+ID: 704187 Day: 3 Carrier: AS Number: 24 Origin: Seattle WA Dest: Boston MA Duration: 303 Capacity: 17 Price: 421
+Itinerary 1: 1 flight(s), 304 minutes
+ID: 60456 Day: 3 Carrier: AS Number: 24 Origin: Seattle WA Dest: Boston MA Duration: 304 Capacity: 14 Price: 876
+Itinerary 2: 1 flight(s), 304 minutes
+ID: 704611 Day: 3 Carrier: AS Number: 734 Origin: Seattle WA Dest: Boston MA Duration: 304 Capacity: 6 Price: 477
+Booked flight(s), reservation ID: 2
+Reservation 1 paid: false:
+ID: 60109 Day: 2 Carrier: AS Number: 12 Origin: Seattle WA Dest: Boston MA Duration: 302 Capacity: 13 Price: 549Reservation 2 paid: false:
+ID: 704187 Day: 3 Carrier: AS Number: 24 Origin: Seattle WA Dest: Boston MA Duration: 303 Capacity: 17 Price: 421
+Goodbye
+*
